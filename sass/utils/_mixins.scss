@@ -1,0 +1,29 @@
+@mixin flexAlign($type: flex, $align: center, $justify: center) {
+    display: $type;
+    align-items: $align;
+    justify-content: $justify;
+}
+@mixin funcTransition($property) {
+    transition-property: $property;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
+}
+
+@mixin funcTransition2Param($property1, $property2) {
+    transition-property: $property1, $property2;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
+}
+
+@mixin funcTransition3Param($property1, $property2, $property3) {
+    transition-property: $property1, $property2, $property3;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
+}
+
+@mixin setFont($fs, $lh, $fw, $ls) {
+    font-size: $fs;
+    line-height: $lh;
+    font-weight: $fw;
+    letter-spacing: $ls;
+}

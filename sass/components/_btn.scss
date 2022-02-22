@@ -1,0 +1,17 @@
+.btn {
+    @include setFont(16px, 1.87, 700, 0.06em);
+    color: #ffffff;
+    text-align: center;
+
+    border: none;
+    border-radius: 4px;
+    background: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+    @include funcTransition(background-color);
+
+    &:hover,
+    &:focus {
+        background-color: #188ce8;
+    }
+}

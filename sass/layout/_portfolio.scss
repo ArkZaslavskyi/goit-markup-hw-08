@@ -1,0 +1,131 @@
+/* = Портфолио - Фильтры  = */
+
+.filters-list {
+    display: flex;
+    justify-content: center;
+}
+
+.filters-list__item {
+    & + & {
+        margin-left: 8px;
+    }
+}
+
+.filters-list__btn {
+    padding: 6px 22px;
+
+    @include setFont(16px, 1.62, 500, 0.03em);
+    color: var(--text-dark-color);
+    text-align: center;
+
+    background-color: var(--background-light-gray-color);
+    border: none;
+    border-radius: 4px;
+
+    @include funcTransition3Param(color, background-color, box-shadow);
+
+    &:hover,
+    &:focus {
+        color: #ffffff;
+        background-color: var(--accent-color);
+        box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+            0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    }
+}
+
+/* = Портфолио - Сетка Проектов = */
+
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 50px;
+}
+
+.projects-list__item {
+    --projects-grid-gap: 30px;
+    --projects-grid-columns: 3;
+    flex-basis: calc(
+        (100% - (var(--projects-grid-columns) - 1) * var(--projects-grid-gap)) /
+            var(--projects-grid-columns)
+    );
+    background: #ffffff;
+
+    &:not(:nth-child(3n + 1)) {
+        margin-left: 30px;
+    }
+
+    &:not(:nth-last-child(-n + 3)) {
+        margin-bottom: 30px;
+    }
+}
+
+.projects-list__link {
+    display: block;
+
+    @include funcTransition(box-shadow);
+
+    &:hover,
+    &:focus {
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+            0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+}
+
+.project-list__thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Выезжающее окно с текстом  */
+.project-list__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    @include flexAlign(flex, center, null);
+
+    background-color: rgba(33, 150, 243, 0.9);
+
+    transform: translatey(101%);
+    @include funcTransition(transform);
+
+    .projects-list__link:hover &,
+    .projects-list__link:focus & {
+        transform: translatey(0);
+    }
+}
+
+/* Выезжающий текст о проекте */
+.project-list__text {
+    padding-left: 24px;
+    padding-right: 24px;
+
+    @include setFont(18px, 1.56, null, 0.03em);
+    color: #ffffff;
+}
+
+/* Описание проекта */
+.project-list__sign {
+    padding: 20px 24px;
+
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* Заголовок проекта */
+.project-list__title {
+    @include setFont(18px, 2, 700, 0.06em);
+    color: var(--text-dark-color);
+}
+
+/* Тип проекта */
+.project-list__desc {
+    margin-top: 4px;
+
+    @include setFont(16px, 1.87, null, 0.03em);
+    color: var(--text-light-color);
+}
