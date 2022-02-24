@@ -1,7 +1,9 @@
 .logo {
     font-family: var(--secondary-font);
 
-    @include setFont(26px, 1.2, 700, 0.03em);
+    @include setFont(24px, 1.17, 700, 0.03em);
+    // desktop
+    // @include setFont(26px, 1.2, 700, 0.03em);
     color: var(--accent-color);
 }
 

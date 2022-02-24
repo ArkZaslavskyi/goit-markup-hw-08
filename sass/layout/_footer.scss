@@ -6,7 +6,11 @@
 }
 
 .footer__container {
-    @include flexAlign(flex, baseline, null);
+    // mobile
+    text-align: center;
+
+    // desktop
+    // @include flexAlign(flex, baseline, null);
 }
 
 // Адрес
@@ -19,9 +23,15 @@
 }
 
 .address-list__item {
+    // mobile
     & + & {
-        margin-top: 9px;
+        margin-top: 8px;
     }
+
+    // desktop
+    // & + & {
+    //     margin-top: 9px;
+    // }
 }
 
 .address--light,
@@ -44,7 +54,9 @@
 // Блок "Приоединяйтесь"
 
 .footer-join {
-    margin-left: 70px;
+    margin-top: 60px;
+    // desktop
+    // margin-left: 70px;
 }
 
 .footer-join__social-list {
@@ -59,7 +71,11 @@
 /* -- Блок подписки на рассылку  */
 
 .footer-subscription {
-    margin-left: auto;
+    // mobile
+    margin-top: 60px;
+
+    //desktop
+    // margin-left: auto;
 }
 
 .footer-subscription__text {
@@ -71,15 +87,22 @@
 // Форма подпискм
 
 .footer-form {
-    display: flex;
+    // desktop
+    // display: flex;
+
     margin-top: 20px;
 }
 .footer-form__name {
-    width: 358px;
+    // mobile
+    width: 100%;
+
+    // desktop
+    // width: 358px;
 
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 16px;
+    padding-right: 16px;
 
     @include setFont(16px, 1.25, null, 0.03em);
     color: rgba(255, 255, 255, 0.6);
@@ -97,7 +120,12 @@
 .footer-form__btn {
     @include flexAlign(inline-flex, center, center);
 
-    margin-left: 12px;
+    //mobile
+    margin-top: 20px;
+
+    // desktop
+    // margin-left: 12px;
+
     padding: 10px 28px;
 }
 

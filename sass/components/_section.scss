@@ -1,6 +1,10 @@
 .section {
-    padding-top: 94px;
-    padding-bottom: 94px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    // desktop
+    // padding-top: 94px;
+    // padding-bottom: 94px;
 }
 
 .section--no-padding-top {
@@ -12,7 +16,10 @@
 }
 
 .section__title {
-    @include setFont(36px, 1.17, 700, 0.03em);
+    @include setFont(28px, 1.17, 700, 0.03em);
+
+    // desktop
+    // @include setFont(36px, 1.17, 700, 0.03em);
     color: var(--text-dark-color);
     text-align: center;
 }
