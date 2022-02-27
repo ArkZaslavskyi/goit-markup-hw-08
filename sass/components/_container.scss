@@ -5,12 +5,18 @@
     padding-left: 15px;
     padding-right: 15px;
 
+    // mobile
+    @include tel {
+        width: $mobile;
+    }
+
+    // tablet
+    @include tab {
+        width: $tablet;
+    }
+
     // desktop
-    // width: 1200px;
-
-    // margin-left: auto;
-    // margin-right: auto;
-
-    // padding-left: 15px;
-    // padding-right: 15px;
+    @include desk {
+        width: $desktop;
+    }
 }

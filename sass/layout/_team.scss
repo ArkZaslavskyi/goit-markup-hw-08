@@ -1,6 +1,16 @@
 .team-list {
-    display: flex;
-    margin-top: 50px;
+    //mobile
+    margin-top: 30px;
+
+    //tablet
+    @include tab {
+        display: flex;
+    }
+
+    //desktop
+    @include desk {
+        margin-top: 50px;
+    }
 }
 
 .team-list__item {
@@ -11,15 +21,28 @@
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
 
-    & + & {
-        margin-left: 30px;
+    //mobile
+    &:not(:first-child) {
+        margin-top: 30px;
+    }
+
+    //tablet & desktop
+    @include tab {
+        & + & {
+            margin-left: 30px;
+        }
     }
 }
 
 // Обертка для подписи под картинкой и соц.ссылок
 .team-list__wrap {
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 24px;
+
+    //desktop
+    @include desk {
+        padding-bottom: 30px;
+    }
 
     text-align: center;
 }

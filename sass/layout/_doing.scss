@@ -1,3 +1,7 @@
+.doing {
+    @include media-no-display($desktop - 1px);
+}
+
 .doing-list {
     display: flex;
     margin-top: 50px;

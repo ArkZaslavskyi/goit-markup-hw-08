@@ -5,12 +5,41 @@
     background-color: var(--background-dark-box-color);
 }
 
-.footer__container {
+.footer__container,
+.address-join__container {
     // mobile
     text-align: center;
 
     // desktop
-    // @include flexAlign(flex, baseline, null);
+    @include desk {
+        @include flexAlign(flex, baseline, null);
+        text-align: left;
+    }
+}
+
+.address-join__container {
+    // tablet
+    @include tab {
+        @include flexAlign(flex, flex-start, null);
+    }
+
+    // desktop
+    @include desk {
+        @include flexAlign(flex, baseline, null);
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+}
+
+.logo-address,
+.footer-join {
+    // tablet
+    @include tab {
+        flex-basis: 50%;
+    }
+    @include desk {
+        flex-basis: auto;
+    }
 }
 
 // Адрес
@@ -55,8 +84,16 @@
 
 .footer-join {
     margin-top: 60px;
+
+    // tablet
+    @include tab {
+        margin-top: 0;
+    }
+
     // desktop
-    // margin-left: 70px;
+    @include desk {
+        margin-left: 70px;
+    }
 }
 
 .footer-join__social-list {
@@ -71,11 +108,14 @@
 /* -- Блок подписки на рассылку  */
 
 .footer-subscription {
-    // mobile
+    // mobile & tablet
     margin-top: 60px;
 
     //desktop
-    // margin-left: auto;
+    @include desk {
+        margin-top: 0;
+        margin-left: auto;
+    }
 }
 
 .footer-subscription__text {
@@ -87,17 +127,25 @@
 // Форма подпискм
 
 .footer-form {
+    margin-top: 20px;
+
     // desktop
     // display: flex;
-
-    margin-top: 20px;
 }
+
 .footer-form__name {
     // mobile
     width: 100%;
 
+    // tablet
+    @include tab {
+        width: 448px;
+    }
+
     // desktop
-    // width: 358px;
+    @include desk {
+        width: 358px;
+    }
 
     padding-top: 15px;
     padding-bottom: 15px;
@@ -118,15 +166,23 @@
     outline: none;
 }
 .footer-form__btn {
-    @include flexAlign(inline-flex, center, center);
+    @include flexAlign(flex, center, center);
 
-    //mobile
+    // mobile & tablet
     margin-top: 20px;
+    padding: 10px 28px;
+
+    // tablet
+    margin-left: auto;
+    margin-right: auto;
 
     // desktop
-    // margin-left: 12px;
-
-    padding: 10px 28px;
+    @include desk {
+        @include flexAlign(inline-flex, null, null);
+        margin-top: 0;
+        margin-left: 12px;
+        margin-right: 0;
+    }
 }
 
 .icon-send {

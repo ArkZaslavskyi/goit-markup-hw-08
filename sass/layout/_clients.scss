@@ -1,6 +1,14 @@
 .clients-list {
-    display: flex;
-    margin-top: 50px;
+    //mobile & tablet
+    @include tab {
+        display: flex;
+        margin-top: 30px;
+    }
+
+    //desktop
+    @include desk {
+        margin-top: 50px;
+    }
 }
 
 .clients-list__item {
