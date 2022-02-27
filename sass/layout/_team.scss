@@ -5,10 +5,12 @@
     //tablet
     @include tab {
         display: flex;
+        flex-wrap: wrap;
     }
 
     //desktop
     @include desk {
+        flex-wrap: nowrap;
         margin-top: 50px;
     }
 }
@@ -21,13 +23,35 @@
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
 
-    //mobile
     &:not(:first-child) {
         margin-top: 30px;
     }
 
-    //tablet & desktop
+    // tablet
     @include tab {
+        flex-basis: calc((100% - 1 * 30px) / 2);
+
+        &:nth-child(-n + 2) {
+            margin-top: 0;
+        }
+
+        &:nth-last-child(-n + 2) {
+            margin-top: 30px;
+        }
+
+        &:nth-child(even) {
+            margin-left: 30px;
+        }
+    }
+
+    // desktop
+    @include desk {
+        flex-basis: calc((100% - 3 * 30px) / 4);
+
+        &:nth-child(n) {
+            margin-top: 0;
+        }
+
         & + & {
             margin-left: 30px;
         }
