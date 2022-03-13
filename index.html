@@ -27,77 +27,103 @@
     </head>
     <body>
         <!-- Шапка страницы -->
-        <!-- <header class="header">
-            <div class="container"> -->
-        <!-- Навигация на главной -->
-        <!-- <div class="header__wrap">
-                    <nav class="navigation"> -->
-        <!-- Лого в Хедере -->
-        <!-- <a class="logo" href="./index.html">
-                            Web<span class="logo--dark">Studio</span>
-                        </a> -->
-        <!-- Меню -->
-        <!-- <ul class="nav-list">
-                            <li class="nav-list__item">
+        <header class="header">
+            <div class="container">
+                <!-- Навигация на главной -->
+                <div class="header__wrap">
+                    <!-- Лого в Хедере -->
+                    <a class="logo" href="./index.html">
+                        Web<span class="logo--dark">Studio</span>
+                    </a>
+                    <button
+                        type="button"
+                        class="menu-button"
+                        aria-expanded="false"
+                        aria-controls="menu-container"
+                        data-menu-button
+                    >
+                        <svg
+                            width="40"
+                            height="40"
+                            aria-label="Переключатель моюильного меню"
+                        >
+                            <use
+                                class="icon-menu"
+                                href="./img/icons.svg#icon-menu"
+                            ></use>
+                            <use
+                                class="icon-close"
+                                href="./img/icons.svg#icon-close"
+                            ></use>
+                        </svg>
+                    </button>
+                    <div class="menu-container" id="menu-container" data-menu>
+                        <nav class="navigation">
+                            <!-- Меню -->
+                            <ul class="nav-list">
+                                <li class="nav-list__item">
+                                    <a
+                                        class="nav-list__link nav-list__link--current"
+                                        href="./index.html"
+                                        >Студия</a
+                                    >
+                                </li>
+                                <li class="nav-list__item">
+                                    <a
+                                        class="nav-list__link"
+                                        href="./portfolio.html"
+                                        >Портфолио</a
+                                    >
+                                </li>
+                                <li class="nav-list__item">
+                                    <a class="nav-list__link" href=""
+                                        >Контакты</a
+                                    >
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- Ссылки в хедере -->
+                        <ul class="header-links">
+                            <li class="header-links__item">
                                 <a
-                                    class="nav-list__link nav-list__link--current"
-                                    href="./index.html"
-                                    >Студия</a
+                                    class="header-links__link"
+                                    href="mailto:info@devstudio.com"
+                                    ><svg
+                                        class="header-links__icon"
+                                        width="16"
+                                        height="12"
+                                    >
+                                        <use
+                                            href="./img/icons.svg#envelope"
+                                        ></use></svg
+                                    >info@devstudio.com</a
                                 >
                             </li>
-                            <li class="nav-list__item">
+                            <li class="header-links__item">
                                 <a
-                                    class="nav-list__link"
-                                    href="./portfolio.html"
-                                    >Портфолио</a
+                                    class="header-links__link"
+                                    href="tel:+380961111111"
+                                    ><svg
+                                        class="header-links__icon"
+                                        width="10"
+                                        height="16"
+                                    >
+                                        <use
+                                            href="./img/icons.svg#smartphone"
+                                        ></use></svg
+                                    >+38 096 111 11 11</a
                                 >
-                            </li>
-                            <li class="nav-list__item">
-                                <a class="nav-list__link" href="">Контакты</a>
                             </li>
                         </ul>
-                    </nav> -->
-        <!-- Ссылки в хедере -->
-        <!-- <ul class="header-links">
-                        <li class="header-links__item">
-                            <a
-                                class="header-links__link"
-                                href="mailto:info@devstudio.com"
-                                ><svg
-                                    class="header-links__icon"
-                                    width="16"
-                                    height="12"
-                                >
-                                    <use
-                                        href="./img/icons.svg#envelope"
-                                    ></use></svg
-                                >info@devstudio.com</a
-                            >
-                        </li>
-                        <li class="header-links__item">
-                            <a
-                                class="header-links__link"
-                                href="tel:+380961111111"
-                                ><svg
-                                    class="header-links__icon"
-                                    width="10"
-                                    height="16"
-                                >
-                                    <use
-                                        href="./img/icons.svg#smartphone"
-                                    ></use></svg
-                                >+38 096 111 11 11</a
-                            >
-                        </li>
-                    </ul>
+                    </div>
                 </div>
             </div>
-        </header> -->
+        </header>
 
         <!-- Основной контент - Студия -->
         <main>
             <!-- Герой -->
-            <!-- <section class="hero">
+            <section class="hero">
                 <div class="container">
                     <h1 class="hero__title">
                         Эффективные решения<br />для вашего бизнеса
@@ -106,7 +132,7 @@
                         Заказать услугу
                     </button>
                 </div>
-            </section> -->
+            </section>
 
             <!-- Особенности -->
             <section class="section">
@@ -181,11 +207,24 @@
                     <ul class="doing-list">
                         <li class="doing-list__item">
                             <div class="doing-list__thumb">
-                                <img
-                                    src="./img/tech1.jpg"
-                                    alt="Десктопные приложения"
-                                    width="370"
-                                />
+                                <picture>
+                                    <source
+                                        srcset="
+                                            ./img/tech1-370.webp    1x,
+                                            ./img/tech1-370@2x.webp 2x
+                                        "
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        srcset="
+                                            ./img/tech1-370.jpg    1x,
+                                            ./img/tech1-370@2x.jpg 2x
+                                        "
+                                        src="./img/tech1.jpg"
+                                        alt="Десктопные приложения"
+                                        width="370"
+                                    />
+                                </picture>
                                 <div class="doing-list__text-wrap">
                                     <p class="doing-list__text">
                                         Десктопные приложения
@@ -195,11 +234,24 @@
                         </li>
                         <li class="doing-list__item">
                             <div class="doing-list__thumb">
-                                <img
-                                    src="./img/tech2.jpg"
-                                    alt="Мобильные приложения"
-                                    width="370"
-                                />
+                                <picture>
+                                    <source
+                                        srcset="
+                                            ./img/tech2-370.webp    1x,
+                                            ./img/tech2-370@2x.webp 2x
+                                        "
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        srcset="
+                                            ./img/tech2-370.jpg    1x,
+                                            ./img/tech2-370@2x.jpg 2x
+                                        "
+                                        src="./img/tech2.jpg"
+                                        alt="Мобильные приложения"
+                                        width="370"
+                                    />
+                                </picture>
                                 <div class="doing-list__text-wrap">
                                     <p class="doing-list__text">
                                         Мобильные приложения
@@ -209,11 +261,24 @@
                         </li>
                         <li class="doing-list__item">
                             <div class="doing-list__thumb">
-                                <img
-                                    src="./img/tech3.jpg"
-                                    alt="Дизайнерские решения"
-                                    width="370"
-                                />
+                                <picture>
+                                    <source
+                                        srcset="
+                                            ./img/tech3-370.webp    1x,
+                                            ./img/tech3-370@2x.webp 2x
+                                        "
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        srcset="
+                                            ./img/tech3-370.jpg    1x,
+                                            ./img/tech3-370@2x.jpg 2x
+                                        "
+                                        src="./img/tech3.jpg"
+                                        alt="Дизайнерские решения"
+                                        width="370"
+                                    />
+                                </picture>
                                 <div class="doing-list__text-wrap">
                                     <p class="doing-list__text">
                                         Дизайнерские решения
@@ -231,11 +296,57 @@
                     <h2 class="section__title">Наша команда</h2>
                     <ul class="team-list">
                         <li class="team-list__item">
-                            <img
-                                src="./img/team1.jpg"
-                                alt="Игорь Демьяненко"
-                                width="270"
-                            />
+                            <picture>
+                                <source
+                                    srcset="
+                                        ./img/team1-450.webp    1x,
+                                        ./img/team1-450@2x.webp 2x
+                                    "
+                                    type="image/webp"
+                                    media="(max-width: 767px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team1-450.jpg    1x,
+                                        ./img/team1-450@2x.jpg 2x
+                                    "
+                                    media="(max-width: 767px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team1-354.webp    1x,
+                                        ./img/team1-354@2x.webp 2x
+                                    "
+                                    type="image/webp"
+                                    media="(min-width: 768px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team1-354.jpg    1x,
+                                        ./img/team1-354@2x.jpg 2x
+                                    "
+                                    media="(min-width: 768px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team1-270.webp    1x,
+                                        ./img/team1-270@2x.webp 2x
+                                    "
+                                    type="image/webp"
+                                    media="(min-width: 1200px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team1-270.jpg    1x,
+                                        ./img/team1-270@2x.jpg 2x
+                                    "
+                                    media="(min-width: 1200px)"
+                                />
+                                <img
+                                    src="./img/team1-354.jpg"
+                                    alt="Игорь Демьяненко"
+                                />
+                            </picture>
 
                             <div class="team-list__wrap">
                                 <h3 class="team-list__title">
@@ -312,11 +423,57 @@
                             </div>
                         </li>
                         <li class="team-list__item">
-                            <img
-                                src="./img/team2.jpg"
-                                alt="Ольга Репина"
-                                width="270"
-                            />
+                            <picture>
+                                <source
+                                    srcset="
+                                        ./img/team2-450.webp    1x,
+                                        ./img/team2-450@2x.webp 2x
+                                    "
+                                    type="image/webp"
+                                    media="(max-width: 767px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team2-450.jpg    1x,
+                                        ./img/team2-450@2x.jpg 2x
+                                    "
+                                    media="(max-width: 767px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team2-354.webp    1x,
+                                        ./img/team2-354@2x.webp 2x
+                                    "
+                                    type="image/webp"
+                                    media="(min-width: 768px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team2-354.jpg    1x,
+                                        ./img/team2-354@2x.jpg 2x
+                                    "
+                                    media="(min-width: 768px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team2-270.webp    1x,
+                                        ./img/team2-270@2x.webp 2x
+                                    "
+                                    type="image/webp"
+                                    media="(min-width: 1200px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team2-270.jpg    1x,
+                                        ./img/team2-270@2x.jpg 2x
+                                    "
+                                    media="(min-width: 1200px)"
+                                />
+                                <img
+                                    src="./img/team2-354.jpg"
+                                    alt="Ольга Репина"
+                                />
+                            </picture>
 
                             <div class="team-list__wrap">
                                 <h3 class="team-list__title">Ольга Репина</h3>
@@ -393,11 +550,57 @@
                             </div>
                         </li>
                         <li class="team-list__item">
-                            <img
-                                src="./img/team3.jpg"
-                                alt="Николай Тарасов"
-                                width="270"
-                            />
+                            <picture>
+                                <source
+                                    srcset="
+                                        ./img/team3-450.webp    1x,
+                                        ./img/team3-450@2x.webp 2x
+                                    "
+                                    type="image/webp"
+                                    media="(max-width: 767px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team3-450.jpg    1x,
+                                        ./img/team3-450@2x.jpg 2x
+                                    "
+                                    media="(max-width: 767px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team3-354.webp    1x,
+                                        ./img/team3-354@2x.webp 2x
+                                    "
+                                    type="image/webp"
+                                    media="(min-width: 768px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team3-354.jpg    1x,
+                                        ./img/team3-354@2x.jpg 2x
+                                    "
+                                    media="(min-width: 768px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team3-270.webp    1x,
+                                        ./img/team3-270@2x.webp 2x
+                                    "
+                                    type="image/webp"
+                                    media="(min-width: 1200px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team3-270.jpg    1x,
+                                        ./img/team3-270@2x.jpg 2x
+                                    "
+                                    media="(min-width: 1200px)"
+                                />
+                                <img
+                                    src="./img/team3-354.jpg"
+                                    alt="Николай Тарасов"
+                                />
+                            </picture>
 
                             <div class="team-list__wrap">
                                 <h3 class="team-list__title">
@@ -474,11 +677,57 @@
                             </div>
                         </li>
                         <li class="team-list__item">
-                            <img
-                                src="./img/team4.jpg"
-                                alt="Михаил Ермаков"
-                                width="270"
-                            />
+                            <picture>
+                                <source
+                                    srcset="
+                                        ./img/team4-450.webp    1x,
+                                        ./img/team4-450@2x.webp 2x
+                                    "
+                                    type="image/webp"
+                                    media="(max-width: 767px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team4-450.jpg    1x,
+                                        ./img/team4-450@2x.jpg 2x
+                                    "
+                                    media="(max-width: 767px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team4-354.webp    1x,
+                                        ./img/team4-354@2x.webp 2x
+                                    "
+                                    type="image/webp"
+                                    media="(min-width: 768px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team4-354.jpg    1x,
+                                        ./img/team4-354@2x.jpg 2x
+                                    "
+                                    media="(min-width: 768px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team4-270.webp    1x,
+                                        ./img/team4-270@2x.webp 2x
+                                    "
+                                    type="image/webp"
+                                    media="(min-width: 1200px)"
+                                />
+                                <source
+                                    srcset="
+                                        ./img/team4-270.jpg    1x,
+                                        ./img/team4-270@2x.jpg 2x
+                                    "
+                                    media="(min-width: 1200px)"
+                                />
+                                <img
+                                    src="./img/team4-354.jpg"
+                                    alt="Михаил Ермаков"
+                                />
+                            </picture>
 
                             <div class="team-list__wrap">
                                 <h3 class="team-list__title">Михаил Ермаков</h3>
@@ -888,5 +1137,6 @@
 
         <!-- Скрипт -->
         <script src="./js/modal.js"></script>
+        <script src="./js/menu.js"></script>
     </body>
 </html>
