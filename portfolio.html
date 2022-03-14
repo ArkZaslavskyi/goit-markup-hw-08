@@ -35,59 +35,109 @@
                     <a class="logo" href="./index.html">
                         Web<span class="logo--dark">Studio</span>
                     </a>
-                    <nav class="navigation">
-                        <!-- Меню -->
-                        <ul class="nav-list">
-                            <li class="nav-list__item">
-                                <a class="nav-list__link" href="./index.html"
-                                    >Студия</a
-                                >
-                            </li>
-                            <li class="nav-list__item">
+                    <button
+                        type="button"
+                        class="menu-button"
+                        aria-expanded="false"
+                        aria-controls="menu-container"
+                        data-menu-button
+                    >
+                        <svg
+                            width="40"
+                            height="40"
+                            aria-label="Переключатель мобильного меню"
+                        >
+                            <use
+                                class="icon-menu"
+                                href="./img/icons.svg#icon-menu"
+                            ></use>
+                            <use
+                                class="icon-close"
+                                href="./img/icons.svg#icon-close"
+                            ></use>
+                        </svg>
+                    </button>
+                    <div class="menu-container" id="menu-container" data-menu>
+                        <nav class="navigation">
+                            <!-- Меню -->
+                            <ul class="nav-list">
+                                <li class="nav-list__item">
+                                    <a
+                                        class="nav-list__link"
+                                        href="./index.html"
+                                        >Студия</a
+                                    >
+                                </li>
+                                <li class="nav-list__item">
+                                    <a
+                                        class="nav-list__link nav-list__link--current"
+                                        href="./portfolio.html"
+                                        >Портфолио</a
+                                    >
+                                </li>
+                                <li class="nav-list__item">
+                                    <a class="nav-list__link" href=""
+                                        >Контакты</a
+                                    >
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- Ссылки в хедере -->
+                        <ul class="header-links">
+                            <li class="header-links__item">
                                 <a
-                                    class="nav-list__link nav-list__link--current"
-                                    href="./portfolio.html"
-                                    >Портфолио</a
+                                    class="header-links__link"
+                                    href="mailto:info@devstudio.com"
+                                    ><svg
+                                        class="header-links__icon"
+                                        width="16"
+                                        height="12"
+                                    >
+                                        <use
+                                            href="./img/icons.svg#envelope"
+                                        ></use></svg
+                                    >info@devstudio.com</a
                                 >
                             </li>
-                            <li class="nav-list__item">
-                                <a class="nav-list__link" href="">Контакты</a>
+                            <li class="header-links__item">
+                                <a
+                                    class="header-links__link header-links__link--phone"
+                                    href="tel:+380961111111"
+                                    ><svg
+                                        class="header-links__icon"
+                                        width="10"
+                                        height="16"
+                                    >
+                                        <use
+                                            href="./img/icons.svg#smartphone"
+                                        ></use></svg
+                                    >+38 096 111 11 11</a
+                                >
                             </li>
                         </ul>
-                    </nav>
-                    <!-- Ссылки в хедере -->
-                    <ul class="header-links">
-                        <li class="header-links__item">
-                            <a
-                                class="header-links__link"
-                                href="mailto:info@devstudio.com"
-                                ><svg
-                                    class="header-links__icon"
-                                    width="16"
-                                    height="12"
+                        <ul class="header-social">
+                            <li class="header-social__item">
+                                <a href="" class="header-social__link"
+                                    >Instagram</a
                                 >
-                                    <use
-                                        href="./img/icons.svg#envelope"
-                                    ></use></svg
-                                >info@devstudio.com</a
-                            >
-                        </li>
-                        <li class="header-links__item">
-                            <a
-                                class="header-links__link"
-                                href="tel:+380961111111"
-                                ><svg
-                                    class="header-links__icon"
-                                    width="10"
-                                    height="16"
+                            </li>
+                            <li class="header-social__item">
+                                <a href="" class="header-social__link"
+                                    >Twitter</a
                                 >
-                                    <use
-                                        href="./img/icons.svg#smartphone"
-                                    ></use></svg
-                                >+38 096 111 11 11</a
-                            >
-                        </li>
-                    </ul>
+                            </li>
+                            <li class="header-social__item">
+                                <a href="" class="header-social__link"
+                                    >Facebook</a
+                                >
+                            </li>
+                            <li class="header-social__item">
+                                <a href="" class="header-social__link"
+                                    >LinkedIn</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </header>
@@ -373,107 +423,109 @@
         <footer class="footer">
             <div class="container">
                 <div class="footer__container">
-                    <!-- Лого в Футере -->
-                    <div class="logo-address">
-                        <a class="logo" href="./index.html">
-                            Web<span class="logo--light">Studio</span>
-                        </a>
-                        <address class="footer__address">
-                            <ul class="address-list">
-                                <li class="address-list__item">
-                                    <a class="address--light" href=""
-                                        >г. Киев, пр-т Леси Украинки, 26</a
-                                    >
-                                </li>
-                                <li class="address-list__item">
+                    <div class="address-join__container">
+                        <div class="logo-address">
+                            <!-- Лого в Футере -->
+                            <a class="logo" href="./index.html">
+                                Web<span class="logo--light">Studio</span>
+                            </a>
+                            <!-- Адрес в Футере -->
+                            <address class="footer__address">
+                                <ul class="address-list">
+                                    <li class="address-list__item">
+                                        <a class="address--light" href=""
+                                            >г. Киев, пр-т Леси Украинки, 26</a
+                                        >
+                                    </li>
+                                    <li class="address-list__item">
+                                        <a
+                                            class="address--dark"
+                                            href="mailto:info@example.com"
+                                            >info@example.com</a
+                                        >
+                                    </li>
+                                    <li class="address-list__item">
+                                        <a
+                                            class="address--dark"
+                                            href="tel:+380991111111"
+                                            >+38 099 111 11 11</a
+                                        >
+                                    </li>
+                                </ul>
+                            </address>
+                        </div>
+
+                        <!-- Блок "Приоединяйтесь" -->
+                        <div class="footer-join">
+                            <p class="footer-join__text">присоединяйтесь</p>
+                            <ul class="social-list footer-join__social-list">
+                                <li class="social-list__item">
                                     <a
-                                        class="address--dark"
-                                        href="mailto:info@example.com"
-                                        >info@example.com</a
+                                        class="social-list__link footer__social-link"
+                                        href=""
                                     >
+                                        <svg
+                                            class="social-list__icon"
+                                            width="20"
+                                            height="20"
+                                        >
+                                            <use
+                                                href="./img/icons.svg#instagram"
+                                            ></use>
+                                        </svg>
+                                    </a>
                                 </li>
-                                <li class="address-list__item">
+                                <li class="social-list__item">
                                     <a
-                                        class="address--dark"
-                                        href="tel:+380991111111"
-                                        >+38 099 111 11 11</a
+                                        class="social-list__link footer__social-link"
+                                        href=""
                                     >
+                                        <svg
+                                            class="social-list__icon"
+                                            width="20"
+                                            height="20"
+                                        >
+                                            <use
+                                                href="./img/icons.svg#twitter"
+                                            ></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social-list__item">
+                                    <a
+                                        class="social-list__link footer__social-link"
+                                        href=""
+                                    >
+                                        <svg
+                                            class="social-list__icon"
+                                            width="20"
+                                            height="20"
+                                        >
+                                            <use
+                                                href="./img/icons.svg#facebook"
+                                            ></use>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="social-list__item">
+                                    <a
+                                        class="social-list__link footer__social-link"
+                                        href=""
+                                    >
+                                        <svg
+                                            class="social-list__icon"
+                                            width="20"
+                                            height="20"
+                                        >
+                                            <use
+                                                href="./img/icons.svg#linkedin"
+                                            ></use>
+                                        </svg>
+                                    </a>
                                 </li>
                             </ul>
-                        </address>
+                        </div>
                     </div>
-
-                    <!-- Блок "Приоединяйтесь" -->
-                    <div class="footer-join">
-                        <p class="footer-join__text">присоединяйтесь</p>
-                        <ul class="social-list footer-join__social-list">
-                            <li class="social-list__item">
-                                <a
-                                    class="social-list__link footer__social-link"
-                                    href=""
-                                >
-                                    <svg
-                                        class="social-list__icon"
-                                        width="20"
-                                        height="20"
-                                    >
-                                        <use
-                                            href="./img/icons.svg#instagram"
-                                        ></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="social-list__item">
-                                <a
-                                    class="social-list__link footer__social-link"
-                                    href=""
-                                >
-                                    <svg
-                                        class="social-list__icon"
-                                        width="20"
-                                        height="20"
-                                    >
-                                        <use
-                                            href="./img/icons.svg#twitter"
-                                        ></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="social-list__item">
-                                <a
-                                    class="social-list__link footer__social-link"
-                                    href=""
-                                >
-                                    <svg
-                                        class="social-list__icon"
-                                        width="20"
-                                        height="20"
-                                    >
-                                        <use
-                                            href="./img/icons.svg#facebook"
-                                        ></use>
-                                    </svg>
-                                </a>
-                            </li>
-                            <li class="social-list__item">
-                                <a
-                                    class="social-list__link footer__social-link"
-                                    href=""
-                                >
-                                    <svg
-                                        class="social-list__icon"
-                                        width="20"
-                                        height="20"
-                                    >
-                                        <use
-                                            href="./img/icons.svg#linkedin"
-                                        ></use>
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
                     <!-- Блок подписки на рассылку -->
                     <div class="footer-subscription">
                         <p class="footer-subscription__text">
@@ -498,5 +550,8 @@
                 </div>
             </div>
         </footer>
+
+        <!-- Скрипт -->
+        <script src="./js/menu.js"></script>
     </body>
 </html>

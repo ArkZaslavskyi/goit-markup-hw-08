@@ -1,4 +1,5 @@
 .header {
+    position: relative;
     border-bottom: 1px solid #ececec;
 }
 
@@ -13,9 +14,22 @@
         display: none;
 
         &.is-open {
-            margin-left: 93px;
-            @include flexAlign(flex, center, null);
-            flex-grow: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+
+            padding-top: 48px;
+            padding-bottom: 48px;
+            padding-left: 40px;
+
+            background-color: #fff;
+            z-index: 1;
         }
     }
 
@@ -27,7 +41,7 @@
 }
 
 .navigation {
-    @include flexAlign(flex, center, null);
+    // @include flexAlign(flex, center, null);
 }
 
 // button
@@ -41,6 +55,9 @@
     padding: 0;
     border: none;
     background-color: transparent;
+    fill: var(--text-dark-color);
+    cursor: pointer;
+    z-index: 2;
 
     & .icon-close {
         display: none;
@@ -54,6 +71,11 @@
         display: none;
     }
 
+    &:hover,
+    &:focus {
+        fill: var(--accent-color);
+    }
+
     @include tab {
         display: none;
     }
@@ -62,70 +84,109 @@
 // nav-list
 
 .nav-list {
-    display: flex;
+    @include tab {
+        display: flex;
+    }
 }
 
 .nav-list__item {
     & + & {
-        margin-left: 50px;
+        margin-top: 32px;
+    }
+    @include tab {
+        & + & {
+            margin-top: 0;
+            margin-left: 50px;
+        }
     }
 }
 
 .nav-list__link {
     display: block;
-    padding-top: 32px;
-    padding-bottom: 32px;
 
-    @include setFont(14px, 1.2, 500, 0.02em);
+    @include setFont(40px, 1.17, 500, 0.02em);
     color: var(--text-dark-color);
-
-    @include funcTransition(color);
 
     &:hover,
     &:focus {
         color: var(--accent-color);
     }
+
+    @include tab {
+        padding-top: 32px;
+        padding-bottom: 32px;
+
+        @include setFont(14px, 1.2, 500, 0.02em);
+
+        @include funcTransition(color);
+    }
 }
 
 .nav-list__link--current {
-    position: relative;
     color: var(--accent-color);
+    @include tab {
+        position: relative;
 
-    &::after {
-        content: '';
+        &::after {
+            content: '';
 
-        position: absolute;
-        left: 0;
-        bottom: -1px;
+            position: absolute;
+            left: 0;
+            bottom: -1px;
 
-        width: 100%;
-        height: 4px;
+            width: 100%;
+            height: 4px;
 
-        border-radius: 2px;
-        background-color: var(--accent-color);
+            border-radius: 2px;
+            background-color: var(--accent-color);
+        }
     }
 }
 
 // links
 
 .header-links {
+    margin-top: auto;
     display: flex;
-    margin-left: auto;
+    flex-direction: column-reverse;
+
+    @include tab {
+        display: block;
+        margin-top: 0;
+        margin-left: auto;
+    }
+
+    @include desk {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 .header-links__item {
-    & + & {
-        margin-left: 30px;
+    &:not(:last-child) {
+        margin-top: 30px;
+    }
+
+    @include tab {
+        &:not(:last-child) {
+            margin-top: 0;
+        }
+
+        & + & {
+            margin-top: 10px;
+        }
+    }
+    @include desk {
+        & + & {
+            margin-top: 0;
+            margin-left: 30px;
+        }
     }
 }
 
 .header-links__link {
-    @include flexAlign(flex, center, null);
-
-    padding-top: 32px;
-    padding-bottom: 32px;
-
-    @include setFont(14px, 1.2, 500, 0.02em);
+    display: block;
+    @include setFont(24px, 1.17, 500, 0.02em);
     color: var(--text-light-color);
 
     @include funcTransition(color);
@@ -134,9 +195,64 @@
     &:focus {
         color: var(--accent-color);
     }
+
+    @include tab {
+        @include flexAlign(flex, center, null);
+
+        @include setFont(14px, 1.2, 500, 0.02em);
+    }
+
+    @include desk {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+}
+
+.header-links__link--phone {
+    @include media-max-display($tablet - 1px) {
+        @include setFont(34px, 1.17, 500, 0.02em);
+    }
 }
 
 .header-links__icon {
-    margin-right: 10px;
-    fill: currentColor;
+    display: none;
+
+    @include tab {
+        margin-right: 10px;
+        fill: currentColor;
+    }
+}
+
+.header-social {
+    margin-top: 66px;
+    display: flex;
+
+    @include tab {
+        display: none;
+    }
+}
+
+.header-social__item {
+    position: relative;
+    & + & {
+        margin-left: 20px;
+
+        &::before {
+            content: '';
+
+            position: absolute;
+            top: 0;
+            left: -10px;
+
+            width: 1px;
+            height: 100%;
+
+            background-color: rgba(33, 33, 33, 0.2);
+        }
+    }
+}
+
+.header-social__link {
+    @include setFont(18px, 1.22, 500, 0.02em);
+    color: var(--accent-color);
 }

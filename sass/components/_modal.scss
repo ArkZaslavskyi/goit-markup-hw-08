@@ -30,8 +30,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    min-width: 528px;
-    min-height: 581px;
+    width: 450px;
+    height: 609px;
+    @include desk {
+        width: 528px;
+        height: 581px;
+    }
 
     padding: 40px;
 
@@ -184,7 +188,10 @@
 
     display: block;
 
-    @include setFont(14px, 1.71, null, 0.03em);
+    @include setFont(12px, 1.17, null, 0.03em);
+    @include desk {
+        @include setFont(14px, 1.71, null, null);
+    }
     color: var(--text-light-color);
 }
 

@@ -46,6 +46,12 @@
     }
 }
 
+@mixin media-max-display($size) {
+    @media screen and (max-width: $size) {
+        @content;
+    }
+}
+
 @mixin media-no-display($size) {
     @media screen and (max-width: $size) {
         display: none;
