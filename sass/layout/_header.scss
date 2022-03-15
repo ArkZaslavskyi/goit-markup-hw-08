@@ -4,6 +4,7 @@
 }
 
 .header__wrap {
+    position: relative;
     @include flexAlign(flex, center, null);
 }
 
@@ -14,7 +15,7 @@
         display: none;
 
         &.is-open {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
 
@@ -27,6 +28,7 @@
             padding-top: 48px;
             padding-bottom: 48px;
             padding-left: 40px;
+            padding-right: 40px;
 
             background-color: #fff;
             z-index: 1;
@@ -47,12 +49,12 @@
 // button
 
 .menu-button {
-    display: inline-flex;
     margin-top: 0;
     margin-bottom: 0;
     margin-left: auto;
     margin-right: 0;
-    padding: 0;
+
+    padding: 10px 0;
     border: none;
     background-color: transparent;
     fill: var(--text-dark-color);
@@ -124,6 +126,7 @@
 
 .nav-list__link--current {
     color: var(--accent-color);
+
     @include tab {
         position: relative;
 
@@ -224,8 +227,9 @@
 }
 
 .header-social {
-    margin-top: 66px;
+    margin-top: -20px + 66px;
     display: flex;
+    flex-wrap: wrap;
 
     @include tab {
         display: none;
@@ -234,15 +238,18 @@
 
 .header-social__item {
     position: relative;
-    & + & {
-        margin-left: 20px;
 
-        &::before {
+    margin-top: 20px;
+
+    &:not(:last-child) {
+        margin-right: 20px;
+
+        &::after {
             content: '';
 
             position: absolute;
             top: 0;
-            left: -10px;
+            right: calc(-10px);
 
             width: 1px;
             height: 100%;

@@ -437,6 +437,7 @@ button {
 }
 
 .header__wrap {
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -446,7 +447,7 @@ button {
     display: none;
   }
   .menu-container.is-open {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -456,6 +457,7 @@ button {
     padding-top: 48px;
     padding-bottom: 48px;
     padding-left: 40px;
+    padding-right: 40px;
     background-color: #fff;
     z-index: 1;
   }
@@ -471,12 +473,11 @@ button {
 }
 
 .menu-button {
-  display: inline-flex;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: auto;
   margin-right: 0;
-  padding: 0;
+  padding: 10px 0;
   border: none;
   background-color: transparent;
   fill: var(--text-dark-color);
@@ -666,8 +667,9 @@ button {
 }
 
 .header-social {
-  margin-top: 66px;
+  margin-top: 46px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 @media screen and (min-width: 768px) {
@@ -678,17 +680,18 @@ button {
 
 .header-social__item {
   position: relative;
+  margin-top: 20px;
 }
 
-.header-social__item + .header-social__item {
-  margin-left: 20px;
+.header-social__item:not(:last-child) {
+  margin-right: 20px;
 }
 
-.header-social__item + .header-social__item::before {
+.header-social__item:not(:last-child)::after {
   content: '';
   position: absolute;
   top: 0;
-  left: -10px;
+  right: calc(-10px);
   width: 1px;
   height: 100%;
   background-color: rgba(33, 33, 33, 0.2);
@@ -1350,6 +1353,7 @@ button {
 
 @media screen and (min-width: 768px) {
   .projects-list__link {
+    height: 100%;
     display: flex;
     flex-direction: column;
   }
