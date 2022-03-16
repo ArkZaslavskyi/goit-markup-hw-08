@@ -11,6 +11,8 @@
     opacity: 1;
 
     @include funcTransition2Param(opacity, visibility);
+
+    z-index: 5;
 }
 
 .backdrop.is-hidden {

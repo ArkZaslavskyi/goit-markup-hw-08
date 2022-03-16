@@ -215,6 +215,7 @@ button {
   transition-property: opacity, visibility;
   transition-duration: var(--transition-time);
   transition-timing-function: var(--transition-function);
+  z-index: 5;
 }
 
 .backdrop.is-hidden {
