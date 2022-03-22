@@ -2,9 +2,10 @@
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
+
+    padding: 15px;
 
     background-color: rgba(0, 0, 0, 0.2);
 
@@ -23,17 +24,25 @@
 
 .backdrop.is-hidden .modal {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0.5) rotate(-180deg);
+
+    @include tel {
+        transform: translate(-50%, -50%) scale(0.5) rotate(-180deg);
+    }
 }
 
 .modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
 
-    width: 450px;
-    height: 609px;
+    @include tel {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 450px;
+        height: 609px;
+    }
+
     @include desk {
         width: 528px;
         height: 581px;
@@ -181,8 +190,12 @@
     position: relative;
 
     margin-top: 20px;
-
-    @include flexAlign(flex, center, center);
+    @include max-display($mobile) {
+        @include flexAlign(flex, flex-start, center);
+    }
+    @include tel {
+        @include flexAlign(flex, center, center);
+    }
 }
 
 .checkbox__label {
@@ -203,6 +216,7 @@
 }
 
 .checkbox__icon {
+    flex-shrink: 0;
     width: 16px;
     height: 15px;
     border: 2px solid var(--text-dark-color);

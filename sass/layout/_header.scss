@@ -212,7 +212,7 @@
 }
 
 .header-links__link--phone {
-    @include media-max-display($tablet - 1px) {
+    @include max-display($tablet - 1px) {
         @include setFont(34px, 1.17, 500, 0.02em);
     }
 }
