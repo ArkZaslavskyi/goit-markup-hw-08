@@ -59,18 +59,17 @@
 .features-list__title {
     margin-top: 30px;
 
-    //mobile
+    color: var(--text-dark-color);
+    text-transform: uppercase;
     @include setFont(14px, 1.17, 700, 0.03em);
 
-    // desktop
-    // @include setFont(14px, 1.2, 700, 0.03em);
-
-    text-transform: uppercase;
-
-    color: var(--text-dark-color);
-
-    //mobile
+    //mobile & desktop
     text-align: center;
+
+    // desktop
+    @include desk {
+        text-align: left;
+    }
 }
 
 .features-list__text {
