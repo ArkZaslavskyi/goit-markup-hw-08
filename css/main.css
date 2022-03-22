@@ -1085,30 +1085,14 @@ button {
 @media screen and (min-width: 768px) {
   .address-join__container {
     display: flex;
-    align-items: flex-start;
+    align-items: baseline;
+    justify-content: space-around;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .address-join__container {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: nowrap;
     justify-content: flex-start;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .logo-address,
-  .footer-join {
-    flex-basis: 50%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .logo-address,
-  .footer-join {
-    flex-basis: auto;
   }
 }
 
@@ -1122,6 +1106,12 @@ button {
 
 .address-list__item + .address-list__item {
   margin-top: 8px;
+}
+
+@media screen and (min-width: 1200px) {
+  .address-list__item + .address-list__item {
+    margin-top: 9px;
+  }
 }
 
 .address--light,
@@ -1256,30 +1246,40 @@ button {
 
 /* = Портфолио - Фильтры  = */
 .filters-list {
+  margin-bottom: 40px;
   margin-top: -15px;
+  margin-left: -8px;
   display: flex;
   flex-wrap: wrap;
 }
 
 @media screen and (min-width: 768px) {
   .filters-list {
-    margin-top: 0;
+    margin-bottom: 30px;
     flex-wrap: nowrap;
     justify-content: center;
   }
 }
 
-.filters-list__item {
-  margin-top: 15px;
+@media screen and (min-width: 1200px) {
+  .filters-list {
+    margin-bottom: 50px;
+    margin-top: 0;
+    margin-left: 0;
+  }
 }
 
-.filters-list__item + .filters-list__item {
+.filters-list__item {
+  margin-top: 15px;
   margin-left: 8px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .filters-list__item {
     margin-top: 0;
+  }
+  .filters-list__item:first-child {
+    margin-left: 0;
   }
 }
 
@@ -1308,7 +1308,6 @@ button {
 /* = Портфолио - Сетка Проектов = */
 .projects-list {
   --projects-grid-gap: 30px;
-  margin-top: 40px;
 }
 
 @media screen and (min-width: 768px) {
@@ -1317,7 +1316,7 @@ button {
     display: flex;
     flex-wrap: wrap;
     --projects-grid-columns: 2;
-    margin-top: calc(30px - var(--projects-grid-gap));
+    margin-top: calc(-1 * var(--projects-grid-gap));
     margin-left: calc(-1 * var(--projects-grid-gap));
   }
 }
@@ -1325,7 +1324,6 @@ button {
 @media screen and (min-width: 1200px) {
   .projects-list {
     --projects-grid-columns: 3;
-    margin-top: calc(50px - var(--projects-grid-gap));
   }
 }
 

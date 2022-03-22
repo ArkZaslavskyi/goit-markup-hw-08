@@ -20,25 +20,15 @@
 .address-join__container {
     // tablet
     @include tab {
-        @include flexAlign(flex, flex-start, null);
+        @include flexAlign(flex, baseline, null);
+        justify-content: space-around;
     }
 
     // desktop
     @include desk {
-        @include flexAlign(flex, baseline, null);
-        flex-wrap: nowrap;
+        // @include flexAlign(flex, baseline, null);
+        // flex-wrap: nowrap;
         justify-content: flex-start;
-    }
-}
-
-.logo-address,
-.footer-join {
-    // tablet
-    @include tab {
-        flex-basis: 50%;
-    }
-    @include desk {
-        flex-basis: auto;
     }
 }
 
@@ -52,15 +42,18 @@
 }
 
 .address-list__item {
-    // mobile
+    // mobile & tablet
     & + & {
         margin-top: 8px;
     }
 
     // desktop
-    // & + & {
-    //     margin-top: 9px;
-    // }
+    @include desk {
+    & + & {
+        margin-top: 9px;
+    }
+}
+
 }
 
 .address--light,
