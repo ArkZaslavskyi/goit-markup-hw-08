@@ -727,17 +727,9 @@ button {
 }
 
 .header-social__item:not(:last-child) {
-  margin-right: 20px;
-}
-
-.header-social__item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: calc(-10px);
-  width: 1px;
-  height: 100%;
-  background-color: rgba(33, 33, 33, 0.2);
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
 }
 
 .header-social__link {
